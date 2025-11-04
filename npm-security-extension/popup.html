@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NPM Security Analyzer</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 400px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: #1f2937;
+    }
+
+    .container {
+      padding: 20px;
+    }
+
+    .header {
+      text-align: center;
+      color: white;
+      margin-bottom: 20px;
+    }
+
+    .header h1 {
+      font-size: 20px;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .header p {
+      font-size: 13px;
+      opacity: 0.9;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 16px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .info-section {
+      margin-bottom: 16px;
+    }
+
+    .info-section h3 {
+      font-size: 14px;
+      color: #6b7280;
+      margin-bottom: 8px;
+    }
+
+    .info-section p {
+      font-size: 13px;
+      line-height: 1.6;
+      color: #374151;
+    }
+
+    .action-btn {
+      width: 100%;
+      padding: 12px;
+      background: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .action-btn:hover {
+      background: #1d4ed8;
+      transform: translateY(-1px);
+    }
+
+    .action-btn:active {
+      transform: translateY(0);
+    }
+
+    .features {
+      list-style: none;
+    }
+
+    .features li {
+      padding: 8px 0;
+      font-size: 13px;
+      color: #374151;
+      display: flex;
+      align-items: start;
+      gap: 8px;
+    }
+
+    .features li:before {
+      content: "✓";
+      color: #10b981;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+
+    .footer {
+      text-align: center;
+      color: white;
+      font-size: 11px;
+      opacity: 0.8;
+      margin-top: 16px;
+    }
+
+    .footer a {
+      color: white;
+      text-decoration: underline;
+    }
+
+    .shield-icon {
+      width: 24px;
+      height: 24px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>
+        <svg class="shield-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+        </svg>
+        NPM Security Analyzer
+      </h1>
+      <p>Análise de vulnerabilidades em tempo real</p>
+    </div>
+
+    <div class="card">
+      <div class="info-section">
+        <h3>📋 Como usar:</h3>
+        <ul class="features">
+          <li>Acesse qualquer repositório no GitHub</li>
+          <li>Clique no botão "Analisar Segurança NPM"</li>
+          <li>Veja as vulnerabilidades encontradas</li>
+        </ul>
+      </div>
+
+      <button class="action-btn" id="openGithub">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+        </svg>
+        Ir para GitHub
+      </button>
+    </div>
+
+    <div class="card">
+      <div class="info-section">
+        <h3>🛡️ Recursos:</h3>
+        <ul class="features">
+          <li>Consulta à API OSV.dev (Google)</li>
+          <li>Análise em tempo real</li>
+          <li>Identificação de severidade</li>
+          <li>Links para soluções</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer">
+      Dados fornecidos por <a href="https://osv.dev" target="_blank">OSV.dev</a>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
